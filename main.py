@@ -38,6 +38,9 @@ def main(**kwargs):
     if(action == "d" or action == "D"):
        removeAllSolr()
 
+    if(action == "c" or action =="C"):
+        addData4While()
+
     #print(u"参数错误"+action)
 
 
