@@ -6,35 +6,43 @@ __author__ = 'ngnono'
 
 
 class SolrHelp(object):
-    def getSolr(self, urlStr):
-        return pysolr.Solr(urlStr, timeout=30)
+    def getSolr(self, urlStr, timeout=30):
+        return pysolr.Solr(urlStr, timeout=timeout)
+
+    def search(self, solr, q, opts):
+        return solr.search(q, opts)
 
     def search(self, urlStr, q, opts):
+        return self.search(self.getSolr(urlStr), q, opts)
+
+    def update(self, solr, datas, isCommit):
+        return solr.add(datas, commit=isCommit)
+
+    def update(self, urlStr, datas, isCommit):
         solr = self.getSolr(urlStr)
-        result = solr.search(q, opts)
+        return solr.add(datas, commit=isCommit)
 
-        return result
+    def remove(self, solr, q, isCommit):
+        return solr.delete(q=q, commit=isCommit)
 
-    def update(self, urlStr, datas, isAutoCommit):
+    def remove(self, urlStr, q, isCommit):
         solr = self.getSolr(urlStr)
-        solr.add(datas, isAutoCommit)
-
-    def remove(self, urlStr, q, isAutoCommit):
-        solr = self.getSolr(urlStr)
-        solr.delete(q=q, isAutoCommit)
+        return solr.delete(q=q, commit=isCommit)
 
 
-class BaseSerach(object):
-    def __init__(self, url):
+class BaseSearch(object):
+    def __init__(self, url, timeout=30):
         self.url = url
-        self.solr = SolrHelp()
+        self.timeout = timeout
+        self.solrHelp = SolrHelp()
+        self.solr = self.solrHelp.getSolr(self.url, self.timeout)
 
     def search(self, q, opts):
-        return self.solr.search(self.url, q, opts)
+        return self.solr.search(q, opts)
 
-    def update(self, datas, isAutoCommit):
-        return self.solr.update(self.url, datas, isAutoCommit)
+    def update(self, datas, isCommit):
+        return self.solr.add(datas, commit=isCommit)
 
-    def remove(self, q, isAutoCommit):
-        return self.solr.remove(self.url, q, isAutoCommit)
+    def remove(self, q, isCommit):
+        return self.solr.delete(q=q, commit=isCommit)
 

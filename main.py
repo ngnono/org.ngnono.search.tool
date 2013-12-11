@@ -32,17 +32,16 @@ def main(**kwargs):
 
     action = str(args["action"])
 
-    if(action == "a" or action == "A"):
+    if (action == "a" or action == "A"):
         addData2Solr(args["doc_name_pre"])
 
-    if(action == "d" or action == "D"):
-       removeAllSolr()
+    if (action == "d" or action == "D"):
+        removeAllSolr()
 
-    if(action == "c" or action =="C"):
+    if (action == "c" or action == "C"):
         addData4While()
 
-    #print(u"参数错误"+action)
-
+        #print(u"参数错误"+action)
 
 
 if __name__ == "__main__":

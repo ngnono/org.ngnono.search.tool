@@ -18,15 +18,15 @@ def create_datas(docNamePre):
                 "id": docNamePre + str(i),
                 "name": "v1",
                 "price": 10,
-                "title": [u"丰田汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)] ,
-                "titled_"+(str(i)): [u"北京现代汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
-                "titled_"+(str(i+1)): [u"北京现代汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
-                "titled_"+(str(i+2)): [u"北京现代汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
-                "titled_"+(str(i+3)): [u"北京现代汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
-                "titled_"+(str(i+4)): [u"北京现代汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
-                "titled_"+(str(i+5)): [u"北京现代汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
-                "titled_"+(str(i+6)): [u"北京现代汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
-                "titled_"+(str(i+7)): [u"北京现代汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
+                "title": [u"丰田汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
+                "titled_" + (str(i)): [u"北京现代汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
+                "titled_" + (str(i + 1)): [u"北京现代汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
+                "titled_" + (str(i + 2)): [u"北京现代汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
+                "titled_" + (str(i + 3)): [u"北京现代汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
+                "titled_" + (str(i + 4)): [u"北京现代汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
+                "titled_" + (str(i + 5)): [u"北京现代汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
+                "titled_" + (str(i + 6)): [u"北京现代汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
+                "titled_" + (str(i + 7)): [u"北京现代汽车，卡罗拉我靠EST，凯美瑞买不起，锐志后取的" + str(i), u"本田杰德" + str(i)],
             }
         )
 
@@ -54,7 +54,7 @@ def addData4While():
     i = 900
     while (True):
         print "%s" % i
-        addData2Solr(str(i)+u"dahdjk纹dd")
+        addData2Solr(str(i) + u"dahdjk纹dd")
         i += 1
         time.sleep(1)
 
